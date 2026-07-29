@@ -90,26 +90,25 @@ export const HerbDetail: React.FC = () => {
 
   // Download full plant tag card as high-res printable PNG image using direct 2D Canvas
   const handleDownloadCardPng = async () => {
+    const svgEl = document.getElementById("herb-qr-code-svg") || document.getElementById("herb-qr-code-svg-page");
+    if (!svgEl) {
+      showToast("ไม่พบข้อมูล QR Code ในขณะนี้", "error");
+      return;
+    }
+
     try {
       setIsDownloading(true);
-      const svgEl = document.getElementById("herb-qr-code-svg");
-      let qrImg: HTMLImageElement | null = null;
 
-      if (svgEl) {
-        try {
-          const svgData = new XMLSerializer().serializeToString(svgEl);
-          qrImg = new Image();
-          const qrLoaded = new Promise<void>((resolve, reject) => {
-            if (!qrImg) return resolve();
-            qrImg.onload = () => resolve();
-            qrImg.onerror = (e) => reject(e);
-            qrImg.src = "data:image/svg+xml;base64," + btoa(unescape(encodeURIComponent(svgData)));
-          });
-          await qrLoaded;
-        } catch {
-          qrImg = null;
-        }
-      }
+      // Serialize QR Code SVG to Base64 Image
+      const svgData = new XMLSerializer().serializeToString(svgEl);
+      const qrImg = new Image();
+      const qrLoaded = new Promise<void>((resolve, reject) => {
+        qrImg.onload = () => resolve();
+        qrImg.onerror = (e) => reject(e);
+        qrImg.src = "data:image/svg+xml;base64," + btoa(unescape(encodeURIComponent(svgData)));
+      });
+
+      await qrLoaded;
 
       // Create high-resolution Canvas (1000 x 1280)
       const width = 1000;
@@ -180,100 +179,75 @@ export const HerbDetail: React.FC = () => {
       ctx.lineWidth = 4;
       ctx.stroke();
 
-      if (qrImg) {
-        // Draw QR Image inside box
-        const qrPadding = 25;
-        ctx.drawImage(
-          qrImg,
-          qrBoxX + qrPadding,
-          qrBoxY + qrPadding,
-          qrBoxSize - qrPadding * 2,
-          qrBoxSize - qrPadding * 2
-        );
-      } else {
-        // Draw Placeholder in Canvas
-        ctx.setLineDash([10, 10]);
-        ctx.strokeStyle = "#0D9488";
-        ctx.lineWidth = 4;
-        ctx.strokeRect(qrBoxX + 40, qrBoxY + 40, qrBoxSize - 80, qrBoxSize - 80);
-        ctx.setLineDash([]);
-
-        ctx.font = "bold 32px 'Prompt', 'Noto Sans Thai', sans-serif";
-        ctx.fillStyle = "#0F766E";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        ctx.fillText("พื้นที่สำหรับ QR Code", width / 2, qrBoxY + 180);
-
-        ctx.font = "bold 20px 'Prompt', 'Noto Sans Thai', sans-serif";
-        ctx.fillStyle = "#64748B";
-        ctx.fillText("(เว้นไว้สร้างอัตโนมัติบนเว็บจริง)", width / 2, qrBoxY + 230);
-      }
+      // Draw QR Image inside box
+      const qrPadding = 25;
+      ctx.drawImage(
+        qrImg,
+        qrBoxX + qrPadding,
+        qrBoxY + qrPadding,
+        qrBoxSize - qrPadding * 2,
+        qrBoxSize - qrPadding * 2
+      );
 
       // Thai Name - Extra Large Font
       let currentY = 645;
-      ctx.font = "bold 72px 'Prompt', 'Noto Sans Thai', sans-serif";
+      ctx.font = "black 58px 'Prompt', 'Noto Sans Thai', sans-serif";
       ctx.fillStyle = "#0F172A";
       ctx.textAlign = "center";
-      ctx.textBaseline = "top";
-      const thaiName = herb?.thaiName || "สมุนไพร";
-      ctx.fillText(thaiName, width / 2, currentY);
+      ctx.textBaseline = "alphabetic";
+      ctx.fillText(herb?.thaiName || "สมุนไพร", width / 2, currentY);
 
-      currentY += 98;
-
-      // Scientific Name - Extra Large Font
+      // Scientific Name
       if (herb?.scientificName) {
-        ctx.font = "italic bold 44px 'Georgia', serif";
+        currentY += 52;
+        ctx.font = "bold italic 30px 'Playfair Display', serif";
         ctx.fillStyle = "#0F766E";
         ctx.fillText(herb.scientificName, width / 2, currentY);
-        currentY += 72;
       }
 
-      // Family - Extra Large Font
+      // Family Tag
       if (herb?.family) {
-        ctx.font = "bold 36px 'Prompt', 'Noto Sans Thai', sans-serif";
+        currentY += 65;
         const familyText = `วงศ์ ${herb.family}`;
+        ctx.font = "bold 26px 'Prompt', 'Noto Sans Thai', sans-serif";
         const textMetrics = ctx.measureText(familyText);
-        const familyBadgeWidth = textMetrics.width + 70;
-        const familyBadgeHeight = 60;
-        const familyBadgeX = (width - familyBadgeWidth) / 2;
+        const tagWidth = textMetrics.width + 50;
+        const tagHeight = 52;
 
-        ctx.fillStyle = "#D1FAE5";
+        ctx.fillStyle = "#CCFBF1";
         ctx.beginPath();
-        ctx.roundRect(familyBadgeX, currentY, familyBadgeWidth, familyBadgeHeight, 18);
+        ctx.roundRect((width - tagWidth) / 2, currentY - 36, tagWidth, tagHeight, 16);
         ctx.fill();
-
-        ctx.strokeStyle = "#6EE7B7";
-        ctx.lineWidth = 2.5;
+        ctx.strokeStyle = "#5EEAD4";
+        ctx.lineWidth = 2;
         ctx.stroke();
 
-        ctx.fillStyle = "#065F46";
-        ctx.textBaseline = "middle";
-        ctx.fillText(familyText, width / 2, currentY + familyBadgeHeight / 2);
-
-        currentY += familyBadgeHeight + 45;
-      } else {
-        currentY += 25;
+        ctx.fillStyle = "#134E4A";
+        ctx.fillText(familyText, width / 2, currentY);
       }
 
       // Divider Line
-      ctx.strokeStyle = "#5EEAD4";
-      ctx.lineWidth = 3.5;
+      currentY += 55;
       ctx.beginPath();
-      ctx.moveTo(80, currentY);
-      ctx.lineTo(width - 80, currentY);
+      ctx.moveTo(120, currentY);
+      ctx.lineTo(width - 120, currentY);
+      ctx.strokeStyle = "#5EEAD4";
+      ctx.lineWidth = 3;
       ctx.stroke();
 
-      currentY += 35;
-
-      // Location - Extra Large Font with Plot 1 / Plot 2 logic
-      const displayLocation = getDisplayLocation(herb);
-      const locationText = `📍 พิกัด: ${displayLocation}`;
-      ctx.font = "bold 40px 'Prompt', 'Noto Sans Thai', sans-serif";
+      // Location Info
+      currentY += 55;
+      ctx.font = "bold 32px 'Prompt', 'Noto Sans Thai', sans-serif";
       ctx.fillStyle = "#0F172A";
-      ctx.textBaseline = "top";
-      ctx.fillText(locationText, width / 2, currentY);
+      ctx.fillText(`📍 พิกัด: ${getDisplayLocation(herb)}`, width / 2, currentY);
 
-      // Export as PNG and trigger download
+      // Footer callout
+      currentY += 65;
+      ctx.font = "medium 22px 'Prompt', 'Noto Sans Thai', sans-serif";
+      ctx.fillStyle = "#0D9488";
+      ctx.fillText("สแกน QR Code เพื่อดูสรรพคุณทางยา วิธีใช้ และรายงานวิจัย", width / 2, currentY);
+
+      // Export to high-res PNG download
       const pngUrl = canvas.toDataURL("image/png");
       const a = document.createElement("a");
       a.href = pngUrl;
@@ -283,9 +257,9 @@ export const HerbDetail: React.FC = () => {
       document.body.removeChild(a);
 
       showToast("ดาวน์โหลดแผ่นป้าย QR Code สำหรับพิมพ์เรียบร้อย!", "success");
-    } catch (err) {
-      console.error("Download card canvas error:", err);
-      showToast("เกิดข้อผิดพลาดในการสร้างไฟล์แผ่นป้าย", "error");
+    } catch (e) {
+      console.error(e);
+      showToast("เกิดข้อผิดพลาดในการดาวน์โหลดแผ่นป้าย", "error");
     } finally {
       setIsDownloading(false);
     }
@@ -540,25 +514,28 @@ export const HerbDetail: React.FC = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row items-center gap-4">
-              {/* QR Code Placeholder Box */}
+              {/* Real generated QRCodeSVG */}
               <div
                 onClick={() => setShowQrModal(true)}
-                className="p-4 bg-slate-50 dark:bg-slate-800/80 rounded-xl border-2 border-dashed border-teal-500/40 dark:border-teal-500/30 flex flex-col items-center justify-center shrink-0 cursor-pointer hover:border-teal-500 transition-all shadow-xs group w-32 h-32 text-center"
-                title="คลิกเพื่อดูตัวอย่างตัวอย่างป้าย QR Code"
+                className="p-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col items-center justify-center shrink-0 cursor-pointer hover:border-teal-500 transition-all shadow-xs group"
+                title="คลิกเพื่อขยายและดาวน์โหลด / พิมพ์แผ่น QR Code"
               >
-                <QrCode className="w-8 h-8 text-teal-600 dark:text-teal-400 group-hover:scale-110 transition-transform" />
-                <span className="text-[10px] font-extrabold text-teal-700 dark:text-teal-300 mt-2 leading-tight">
-                  QR Code พืช
-                </span>
-                <span className="text-[8px] text-slate-400 dark:text-slate-500 font-medium leading-none mt-1">
-                  (เว้นไว้สร้างบนเว็บจริง)
+                <div className="p-1.5 bg-white rounded-lg shadow-2xs group-hover:scale-105 transition-transform">
+                  <QRCodeSVG
+                    id="herb-qr-code-svg-page"
+                    value={herbUrl}
+                    size={96}
+                    level="M"
+                    includeMargin={false}
+                  />
+                </div>
+                <span className="text-[9px] font-extrabold text-teal-600 dark:text-teal-400 mt-2 tracking-wider flex items-center gap-1">
+                  <QrCode className="w-3 h-3" />
+                  <span>สแกนเข้าหน้านี้</span>
                 </span>
               </div>
 
               <div className="space-y-2 text-left">
-                <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800 text-[10px] font-bold">
-                  <span>ℹ️ เว้นไว้สร้างอัตโนมัติตาม URL เว็บไซต์จริง</span>
-                </div>
                 <div>
                   <span className="text-xs font-bold text-teal-600 dark:text-teal-400 block">พิกัดแปลงสมุนไพร:</span>
                   <p className="text-xs sm:text-sm text-slate-800 dark:text-slate-200 font-bold leading-relaxed">
@@ -566,16 +543,23 @@ export const HerbDetail: React.FC = () => {
                   </p>
                 </div>
                 <p className="text-[10px] text-slate-400 dark:text-slate-500 leading-normal">
-                  * เมื่อนำระบบขึ้นติดตั้งบนโดเมนจริง ระบบจะสร้าง QR Code ประจำพืชต้นนี้อัตโนมัติ เพื่อพิมพ์แผ่นป้ายติดหน้าแปลงสมุนไพร
+                  * QR Code จะสร้างลิงก์ตรงมายัง URL ของหน้านี้แบบอัตโนมัติ สามารถดาวน์โหลดเพื่อพิมพ์ติดหน้าแปลงได้ทันที
                 </p>
                 
                 <div className="flex flex-wrap gap-2 pt-1">
                   <button
-                    onClick={() => setShowQrModal(true)}
-                    className="px-3.5 py-1.5 bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold rounded-xl flex items-center gap-1.5 transition-colors cursor-pointer shadow-xs"
+                    onClick={() => handleDownloadQrPng("herb-qr-code-svg-page")}
+                    className="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl flex items-center gap-1.5 transition-colors cursor-pointer shadow-xs"
                   >
-                    <Eye className="w-3.5 h-3.5" />
-                    <span>ดูตัวอย่างแผ่นป้ายพิมพ์</span>
+                    <Download className="w-3.5 h-3.5" />
+                    <span>ดาวน์โหลด QR (PNG)</span>
+                  </button>
+                  <button
+                    onClick={() => setShowQrModal(true)}
+                    className="px-3 py-1.5 bg-teal-50 hover:bg-teal-100 dark:bg-teal-950/40 dark:hover:bg-teal-900/60 text-teal-700 dark:text-teal-300 text-xs font-bold rounded-xl border border-teal-200 dark:border-teal-800 flex items-center gap-1.5 transition-colors cursor-pointer"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                    <span>ขยาย / พิมพ์แผ่นป้าย</span>
                   </button>
                 </div>
               </div>
@@ -802,17 +786,15 @@ export const HerbDetail: React.FC = () => {
                 <span className="text-center">{currentGarden?.name || "ศูนย์บริการสาธารณสุขหาดใหญ่ชีวาสุข"}</span>
               </div>
 
-              {/* QR Code Placeholder Box */}
-              <div className="w-48 h-48 sm:w-52 sm:h-52 mx-auto bg-white rounded-2xl shadow-md border-2 border-dashed border-teal-400 p-4 flex flex-col items-center justify-center text-center space-y-2">
-                <div className="w-14 h-14 rounded-2xl bg-teal-50 border border-teal-200 flex items-center justify-center text-teal-600">
-                  <QrCode className="w-8 h-8" />
-                </div>
-                <span className="font-extrabold text-xs sm:text-sm text-teal-950 leading-tight">
-                  พื้นที่สำหรับ QR Code
-                </span>
-                <span className="text-[10px] text-slate-500 font-medium leading-tight">
-                  (เว้นไว้สร้างอัตโนมัติเมื่อขึ้นโดเมนจริง)
-                </span>
+              {/* QR Code Container */}
+              <div className="p-4 bg-white rounded-2xl shadow-md inline-block border-2 border-teal-200">
+                <QRCodeSVG
+                  id="herb-qr-code-svg"
+                  value={herbUrl}
+                  size={200}
+                  level="H"
+                  includeMargin={true}
+                />
               </div>
 
               {/* Herb Names & Family */}
@@ -841,18 +823,26 @@ export const HerbDetail: React.FC = () => {
             </div>
 
             <p className="text-xs text-slate-500 dark:text-slate-400">
-              * QR Code จะถูกระบบสร้างอัตโนมัติจาก URL เว็บไซต์จริงเมื่อนำระบบขึ้น Production
+              คุณสามารถดาวน์โหลดเป็นไฟล์รูปภาพ PNG เพื่อนำไปพิมพ์และติดตั้งหน้าแปลงสมุนไพรได้ทันที
             </p>
 
             {/* Action Buttons */}
-            <div className="pt-1">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-2 pt-1">
               <button
                 onClick={handleDownloadCardPng}
                 disabled={isDownloading}
-                className="w-full py-3 bg-teal-600 hover:bg-teal-700 text-white rounded-xl text-xs font-bold transition-all shadow-md flex items-center justify-center gap-1.5 cursor-pointer disabled:opacity-50"
+                className="w-full sm:flex-1 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition-all shadow-md flex items-center justify-center gap-1.5 cursor-pointer disabled:opacity-50"
               >
                 <Download className={`w-4 h-4 ${isDownloading ? "animate-bounce" : ""}`} />
-                <span>{isDownloading ? "กำลังสร้างภาพ..." : "ดาวน์โหลดแผ่นป้ายสำหรับพิมพ์ (PNG)"}</span>
+                <span>{isDownloading ? "กำลังสร้างภาพ..." : "ดาวน์โหลดแผ่นป้าย (PNG)"}</span>
+              </button>
+
+              <button
+                onClick={() => handleDownloadQrPng("herb-qr-code-svg")}
+                className="w-full sm:flex-1 py-3 bg-teal-600 hover:bg-teal-700 text-white rounded-xl text-xs font-bold transition-all shadow-sm flex items-center justify-center gap-1.5 cursor-pointer"
+              >
+                <Download className="w-4 h-4" />
+                <span>ดาวน์โหลดเฉพาะ QR</span>
               </button>
             </div>
 
