@@ -9095,6 +9095,390 @@
       "gardenId": "HATYAI001",
       "page": "home",
       "timestamp": "2026-07-27T05:06:02.895Z"
+    },
+    {
+      "logId": "VISIT_1785319795524_c0b6",
+      "gardenId": "HATYAI001",
+      "timestamp": "2026-07-29T10:09:55.524Z",
+      "page": "home"
+    },
+    {
+      "page": "home",
+      "timestamp": "2026-07-29T04:34:10.448Z",
+      "gardenId": "HATYAI001",
+      "logId": "VISIT_1785299650448_43c8"
+    },
+    {
+      "gardenId": "HATYAI001",
+      "timestamp": "2026-07-29T04:34:10.449Z",
+      "logId": "VISIT_1785299650449_r32h",
+      "page": "home"
+    },
+    {
+      "timestamp": "2026-07-29T04:35:15.656Z",
+      "logId": "VISIT_1785299715656_mqsm",
+      "page": "home",
+      "gardenId": "HATYAI001"
+    },
+    {
+      "gardenId": "HATYAI001",
+      "logId": "VISIT_1785299715657_onwv",
+      "page": "home",
+      "timestamp": "2026-07-29T04:35:15.657Z"
+    },
+    {
+      "logId": "VISIT_1785299909621_sf84",
+      "gardenId": "HATYAI001",
+      "timestamp": "2026-07-29T04:38:29.621Z",
+      "page": "home"
+    },
+    {
+      "gardenId": "HATYAI001",
+      "logId": "VISIT_1785299909622_mue6",
+      "page": "home",
+      "timestamp": "2026-07-29T04:38:29.622Z"
+    },
+    {
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "logId": "VISIT_1785300154666_szor",
+      "timestamp": "2026-07-29T04:42:34.666Z"
+    },
+    {
+      "gardenId": "HATYAI001",
+      "logId": "VISIT_1785300154672_prbv",
+      "page": "home",
+      "timestamp": "2026-07-29T04:42:34.672Z"
+    },
+    {
+      "timestamp": "2026-07-29T04:57:01.909Z",
+      "page": "home",
+      "logId": "VISIT_1785301021909_8wug",
+      "gardenId": "HATYAI001"
+    },
+    {
+      "timestamp": "2026-07-29T04:57:01.910Z",
+      "page": "home",
+      "logId": "VISIT_1785301021910_smm6",
+      "gardenId": "HATYAI001"
+    },
+    {
+      "logId": "VISIT_1785301036445_06wr",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T04:57:16.445Z"
+    },
+    {
+      "gardenId": "HATYAI001",
+      "timestamp": "2026-07-29T04:57:16.447Z",
+      "logId": "VISIT_1785301036447_mnle",
+      "page": "home"
+    },
+    {
+      "page": "home",
+      "timestamp": "2026-07-29T05:00:05.985Z",
+      "gardenId": "HATYAI001",
+      "logId": "VISIT_1785301205985_lux6"
+    },
+    {
+      "page": "home",
+      "gardenId": "HATYAI001",
+      "timestamp": "2026-07-29T05:00:05.987Z",
+      "logId": "VISIT_1785301205987_y45u"
+    },
+    {
+      "page": "home",
+      "logId": "VISIT_1785301217941_704u",
+      "timestamp": "2026-07-29T05:00:17.941Z",
+      "gardenId": "HATYAI001"
+    },
+    {
+      "page": "home",
+      "logId": "VISIT_1785301217943_9zti",
+      "gardenId": "HATYAI001",
+      "timestamp": "2026-07-29T05:00:17.943Z"
+    },
+    {
+      "gardenId": "HATYAI001",
+      "logId": "VISIT_1785301231642_g4zn",
+      "page": "home",
+      "timestamp": "2026-07-29T05:00:31.642Z"
+    },
+    {
+      "timestamp": "2026-07-29T05:00:31.650Z",
+      "gardenId": "HATYAI001",
+      "logId": "VISIT_1785301231650_g7v1",
+      "page": "home"
+    },
+    {
+      "timestamp": "2026-07-29T05:01:01.548Z",
+      "logId": "VISIT_1785301261548_5zvu",
+      "page": "home",
+      "gardenId": "HATYAI001"
+    },
+    {
+      "page": "home",
+      "logId": "VISIT_1785301261550_zor8",
+      "timestamp": "2026-07-29T05:01:01.550Z",
+      "gardenId": "HATYAI001"
+    },
+    {
+      "page": "home",
+      "timestamp": "2026-07-29T05:02:29.579Z",
+      "gardenId": "HATYAI001",
+      "logId": "VISIT_1785301349579_9om7"
+    },
+    {
+      "logId": "VISIT_1785301349581_l5xu",
+      "gardenId": "HATYAI001",
+      "timestamp": "2026-07-29T05:02:29.581Z",
+      "page": "home"
+    },
+    {
+      "page": "home",
+      "gardenId": "HATYAI001",
+      "logId": "VISIT_1785301440116_r2ow",
+      "timestamp": "2026-07-29T05:04:00.116Z"
+    },
+    {
+      "timestamp": "2026-07-29T05:04:00.117Z",
+      "logId": "VISIT_1785301440117_zua3",
+      "gardenId": "HATYAI001",
+      "page": "home"
+    },
+    {
+      "logId": "VISIT_1785301525494_9upz",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T05:05:25.494Z"
+    },
+    {
+      "page": "home",
+      "gardenId": "HATYAI001",
+      "timestamp": "2026-07-29T05:05:25.499Z",
+      "logId": "VISIT_1785301525499_7dbo"
+    },
+    {
+      "timestamp": "2026-07-29T05:05:26.637Z",
+      "page": "home",
+      "gardenId": "HATYAI001",
+      "logId": "VISIT_1785301526637_41cy"
+    },
+    {
+      "logId": "VISIT_1785301526640_8ayw",
+      "timestamp": "2026-07-29T05:05:26.641Z",
+      "gardenId": "HATYAI001",
+      "page": "home"
+    },
+    {
+      "page": "home",
+      "gardenId": "HATYAI001",
+      "timestamp": "2026-07-29T05:06:07.542Z",
+      "logId": "VISIT_1785301567542_16qi"
+    },
+    {
+      "page": "home",
+      "timestamp": "2026-07-29T05:06:07.544Z",
+      "gardenId": "HATYAI001",
+      "logId": "VISIT_1785301567544_extd"
+    },
+    {
+      "timestamp": "2026-07-29T05:07:22.747Z",
+      "logId": "VISIT_1785301642747_binl",
+      "page": "home",
+      "gardenId": "HATYAI001"
+    },
+    {
+      "page": "home",
+      "logId": "VISIT_1785301642751_apnl",
+      "gardenId": "HATYAI001",
+      "timestamp": "2026-07-29T05:07:22.751Z"
+    },
+    {
+      "gardenId": "HATYAI001",
+      "logId": "VISIT_1785318016076_k7o6",
+      "page": "home",
+      "timestamp": "2026-07-29T09:40:16.076Z"
+    },
+    {
+      "gardenId": "HATYAI001",
+      "timestamp": "2026-07-29T09:40:16.092Z",
+      "page": "home",
+      "logId": "VISIT_1785318016092_1zld"
+    },
+    {
+      "timestamp": "2026-07-29T10:10:06.393Z",
+      "logId": "VISIT_1785319806393_xijr",
+      "gardenId": "HATYAI001",
+      "page": "home"
+    },
+    {
+      "logId": "VISIT_1785321663786_s9kp",
+      "gardenId": "HATYAI001",
+      "timestamp": "2026-07-29T10:41:03.786Z",
+      "page": "home"
+    },
+    {
+      "logId": "VISIT_1785318827590_98fd",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T09:53:47.590Z"
+    },
+    {
+      "logId": "VISIT_1785318827600_wtil",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T09:53:47.600Z"
+    },
+    {
+      "page": "home",
+      "logId": "VISIT_1785319571647_xpqs",
+      "gardenId": "HATYAI001",
+      "timestamp": "2026-07-29T10:06:11.647Z"
+    },
+    {
+      "gardenId": "HATYAI001",
+      "logId": "VISIT_1785320101185_ckt3",
+      "page": "home",
+      "timestamp": "2026-07-29T10:15:01.185Z"
+    },
+    {
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T10:16:28.195Z",
+      "logId": "VISIT_1785320188195_h3a8"
+    },
+    {
+      "gardenId": "HATYAI001",
+      "logId": "VISIT_1785320239465_ptq8",
+      "timestamp": "2026-07-29T10:17:19.465Z",
+      "page": "home"
+    },
+    {
+      "logId": "VISIT_1785320254324_4gmx",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T10:17:34.324Z"
+    },
+    {
+      "logId": "VISIT_1785321420469_q91q",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T10:37:00.469Z"
+    },
+    {
+      "logId": "VISIT_1785321420485_67by",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T10:37:00.485Z"
+    },
+    {
+      "logId": "VISIT_1785336976565_0tug",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T14:56:16.565Z"
+    },
+    {
+      "logId": "VISIT_1785336976575_fgsk",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T14:56:16.576Z"
+    },
+    {
+      "logId": "VISIT_1785336977345_wg5g",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T14:56:17.345Z"
+    },
+    {
+      "logId": "VISIT_1785336977349_st9x",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T14:56:17.349Z"
+    },
+    {
+      "logId": "VISIT_1785337132439_ff4q",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T14:58:52.439Z"
+    },
+    {
+      "logId": "VISIT_1785337132463_qelh",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T14:58:52.463Z"
+    },
+    {
+      "logId": "VISIT_1785337951326_8vgq",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T15:12:31.326Z"
+    },
+    {
+      "logId": "VISIT_1785337954746_ldoa",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T15:12:34.746Z"
+    },
+    {
+      "logId": "VISIT_1785338211393_mbx4",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T15:16:51.393Z"
+    },
+    {
+      "logId": "VISIT_1785338211436_0ykq",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T15:16:51.437Z"
+    },
+    {
+      "logId": "VISIT_1785338289696_zu6b",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T15:18:09.696Z"
+    },
+    {
+      "logId": "VISIT_1785338289706_7knu",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T15:18:09.706Z"
+    },
+    {
+      "logId": "VISIT_1785338436599_2m3n",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T15:20:36.599Z"
+    },
+    {
+      "logId": "VISIT_1785338436610_20q1",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T15:20:36.610Z"
+    },
+    {
+      "logId": "VISIT_1785338598287_39d8",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T15:23:18.287Z"
+    },
+    {
+      "logId": "VISIT_1785338598298_8kw9",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T15:23:18.298Z"
+    },
+    {
+      "logId": "VISIT_1785339511342_x3am",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T15:38:31.342Z"
+    },
+    {
+      "logId": "VISIT_1785339511353_881p",
+      "gardenId": "HATYAI001",
+      "page": "home",
+      "timestamp": "2026-07-29T15:38:31.353Z"
     }
   ],
   "herbal_platform_gardens": [
@@ -9109,7 +9493,7 @@
       "email": "hatyaibiowellness@example.com",
       "openingHours": "จันทร์-ศุกร์ 08:00-16:30 น.",
       "googleMap": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.0528258384915!2d100.4851211!3d6.0125439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x303cd19bc0fc00ff%3A0xe5f14e7a2b978917!2sHatyai%20Chivasook%20Wellness%20Center!5e0!3m2!1sth!2sth!4v1711122345678!5m2!1sth!2sth",
-      "herbCount": 200,
+      "herbCount": 90,
       "facebook": "https://www.facebook.com/HatyaiChivasook",
       "website": "https://www.hatyaibiowellness.go.th",
       "themeColor": "teal",
@@ -9117,7 +9501,7 @@
       "enableAI": true,
       "enableLeaderboard": true,
       "createdAt": "2026-07-27T01:11:19.561Z",
-      "updatedAt": "2026-07-27T01:38:39.149Z"
+      "updatedAt": "2026-07-29T15:16:57.578Z"
     }
   ],
   "herbal_platform_herbs": [
@@ -9147,9 +9531,9 @@
         "ฐานข้อมูลสมุนไพร คณะเภสัชศาสตร์ มหาวิทยาลัยอุบลราชธานี"
       ],
       "relatedHerbs": [],
-      "viewCount": 45,
+      "viewCount": 51,
       "createdAt": "2026-07-27T01:11:19.557Z",
-      "updatedAt": "2026-07-27T01:11:19.557Z"
+      "updatedAt": "2026-07-29T15:16:57.574Z"
     },
     {
       "herbId": "HERB007",
@@ -15044,6 +15428,16 @@
       "gardenId": "HATYAI001",
       "herbName": "กะเพราแดง",
       "timestamp": "2026-08-01T08:00:00.997Z"
+    },
+    {
+      "logId": "SCAN_1785299693864_4qfy",
+      "gardenId": "HATYAI001",
+      "timestamp": "2026-07-29T04:34:53.864Z"
+    },
+    {
+      "logId": "SCAN_1785299772775_gszr",
+      "gardenId": "HATYAI001",
+      "timestamp": "2026-07-29T04:36:12.775Z"
     }
   ],
   "herbal_platform_herb_view_logs": [
@@ -20566,6 +20960,90 @@
       "gardenId": "HATYAI001",
       "herbId": "HERB002",
       "timestamp": "2026-08-01T08:00:00.999Z"
+    },
+    {
+      "logId": "HVIEW_1785320199111_h8fs",
+      "herbId": "HERB006",
+      "timestamp": "2026-07-29T10:16:39.111Z",
+      "gardenId": "HATYAI001"
+    },
+    {
+      "herbId": "HERB006",
+      "gardenId": "HATYAI001",
+      "logId": "HVIEW_1785320259711_qdyx",
+      "timestamp": "2026-07-29T10:17:39.711Z"
+    },
+    {
+      "logId": "HVIEW_1785299365709_cfm0",
+      "gardenId": "HATYAI001",
+      "herbId": "HERB006",
+      "timestamp": "2026-07-29T04:29:25.709Z"
+    },
+    {
+      "logId": "HVIEW_1785299365714_cty3",
+      "gardenId": "HATYAI001",
+      "herbId": "HERB006",
+      "timestamp": "2026-07-29T04:29:25.714Z"
+    },
+    {
+      "logId": "HVIEW_1785299746728_x1vz",
+      "gardenId": "HATYAI001",
+      "herbId": "HERB006",
+      "timestamp": "2026-07-29T04:35:46.728Z"
+    },
+    {
+      "logId": "HVIEW_1785299746732_9su2",
+      "gardenId": "HATYAI001",
+      "herbId": "HERB006",
+      "timestamp": "2026-07-29T04:35:46.732Z"
+    },
+    {
+      "logId": "HVIEW_1785301200296_1pfr",
+      "gardenId": "HATYAI001",
+      "herbId": "HERB007",
+      "timestamp": "2026-07-29T05:00:00.296Z"
+    },
+    {
+      "logId": "HVIEW_1785301200305_fdp7",
+      "gardenId": "HATYAI001",
+      "herbId": "HERB007",
+      "timestamp": "2026-07-29T05:00:00.305Z"
+    },
+    {
+      "logId": "HVIEW_1785337130227_u5v8",
+      "gardenId": "HATYAI001",
+      "herbId": "HERB006",
+      "timestamp": "2026-07-29T14:58:50.227Z"
+    },
+    {
+      "logId": "HVIEW_1785337130244_7fhr",
+      "gardenId": "HATYAI001",
+      "herbId": "HERB006",
+      "timestamp": "2026-07-29T14:58:50.244Z"
+    },
+    {
+      "logId": "HVIEW_1785338051304_exx7",
+      "gardenId": "HATYAI001",
+      "herbId": "HERB006",
+      "timestamp": "2026-07-29T15:14:11.304Z"
+    },
+    {
+      "logId": "HVIEW_1785338051321_rgn7",
+      "gardenId": "HATYAI001",
+      "herbId": "HERB006",
+      "timestamp": "2026-07-29T15:14:11.321Z"
+    },
+    {
+      "logId": "HVIEW_1785338217564_oiis",
+      "gardenId": "HATYAI001",
+      "herbId": "HERB006",
+      "timestamp": "2026-07-29T15:16:57.564Z"
+    },
+    {
+      "logId": "HVIEW_1785338217580_tle0",
+      "gardenId": "HATYAI001",
+      "herbId": "HERB006",
+      "timestamp": "2026-07-29T15:16:57.580Z"
     }
   ],
   "herbal_platform_users": [
